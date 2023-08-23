@@ -9,21 +9,19 @@
     <script>
       let nome1 = "abc";
       let nome2 = "123";
-      let subs = "";
 
       for (let i = 0; i < nome1.length; i++) {
         for (let j = i + 1; j <= nome1.length; j++) {
-            subs
-        }
-      }
-
-      /*
-      for (let k = 0; k < nome2.length; k++) {  // primeira comb com a segunda string
-            for (let l = k + 1; l < nome2.length; l++) {
-            //   console.log(4, nome1[i] + nome1[j] + nome2[k] + nome2[l]);
+          let subs = nome1.substring(i, j);
+          console.log(subs);
+          for(let k = 0; k < nome2.length; k++){
+            for(let l = k + 1; l <= nome2.length; l++){
+              let subs2 = nome2.substring(k, l);
+              console.log(subs + subs2);
             }
           }
-      */
+        }
+      }
     </script>
   </body>
 </html>
