@@ -6,21 +6,37 @@
     <title>Level 3</title>
   </head>
   <body>
-    <script>
-      let nome1 = "abc";
-      let nome2 = "123";
+    <h1>combinação de nomes.</h1>
+    <p>insira dois nomes para imprimir todas as combinações possíveis:</p>
+    <form id="form" onsubmit="combNames(name1.value, name2.value)">
+      <label for="name1">primeiro nome:</label>
+      <input type="text" name="name1" id="name1">
+      <label for="name2">segundo nome:</label>
+      <input type="text" name="name2" id="name2">
+      <button type="submit" id="btnSend">enviar</button>
+    </form>
 
-      for (let i = 0; i < nome1.length; i++) {
-        for (let j = i + 1; j <= nome1.length; j++) {
-          let subs = nome1.substring(i, j);
-          console.log(subs);
-          for(let k = 0; k < nome2.length; k++){
-            for(let l = k + 1; l <= nome2.length; l++){
-              let subs2 = nome2.substring(k, l);
-              console.log(subs + subs2);
+    <script>
+      function combNames(name1, name2){
+        document.write('<ul>');
+        for (let i = 0; i < name1.length; i++) {
+          document.write(`<li>${name1[i]}</li>`);
+          document.write('<ul>');
+          for (let j = i + 1; j <= name1.length; j++) {
+            let subs = name1.substring(i, j);
+            document.write(`<li>${subs}</li>`);
+            for(let k = 0; k < name2.length; k++){
+              document.write('<ul>');
+              for(let l = k + 1; l <= name2.length; l++){
+                let subs2 = name2.substring(k, l);
+                document.write(`<li>${subs + subs2}</li>`);
+              }
+              document.write('</ul>');
             }
           }
+          document.write('</ul>');
         }
+        document.write('</ul>');
       }
     </script>
   </body>
